@@ -14,7 +14,7 @@ Dự án xây dựng một hệ thống phần mềm bằng C++ phục vụ cho 
 | Họ tên             | Nhiệm vụ chính                                                                 |
 |--------------------|--------------------------------------------------------------------------------|
 | Trần Văn Luân        | Thiết kế cấu trúc dữ liệu, viết chức năng đăng ký, đăng nhập, thay đổi mật khẩu, OTP, xử lý xác thực 2 lớp, bảo mật hệ thống |
-| Nguyễn Thành Phi          | Xây dựng tính năng ví điểm, giao dịch điểm, kiểm tra số dư, xử lý atom         |
+| Nguyễn Thành Phi          | Xây dựng tính năng ví điểm, giao dịch điểm, kiểm tra số dư, xử lý atomic         |
 | Nguyễn Thành Nam            | Phân quyền người dùng, chức năng quản lý, lịch sử giao dịch                                    |
 | Nguyễn Khang        | Lưu trữ dữ liệu vào tệp, quản lý backup, hướng dẫn sử dụng, viết tài liệu      |
 
