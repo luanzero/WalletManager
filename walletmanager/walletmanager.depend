@@ -1,0 +1,146 @@
+# depslib dependency file v1.0
+1744357295 source:d:\study\btl\wallet-manager\walletmanager\main.cpp
+	"user.h"
+	"wallet.h"
+	"transaction.h"
+	"utils.h"
+	"data_manager.h"
+	<iostream>
+	<string>
+	<vector>
+	<algorithm>
+
+1744357246 d:\study\btl\wallet-manager\walletmanager\user.h
+	<string>
+	<vector>
+	"wallet.h"
+
+1744357893 d:\study\btl\wallet-manager\walletmanager\wallet.h
+	<string>
+	<vector>
+	"transaction.h"
+
+1744278122 d:\study\btl\wallet-manager\walletmanager\transaction.h
+	<string>
+
+1744357935 d:\study\btl\wallet-manager\walletmanager\utils.h
+	"utils.h"
+	"user.h"
+	"wallet.h"
+	"transaction.h"
+	<sstream>
+	<iomanip>
+	<ctime>
+	<cstdlib>
+	<fstream>
+	<filesystem>
+
+1744357264 source:d:\study\btl\wallet-manager\walletmanager\user.cpp
+	"user.h"
+	"utils.h"
+	<iostream>
+
+1744344200 source:d:\study\btl\wallet-manager\walletmanager\wallet.cpp
+	"wallet.h"
+	"utils.h"
+	"user.h"
+	<iostream>
+
+1744357946 source:d:\study\btl\wallet-manager\walletmanager\utils.cpp
+	"utils.h"
+	<iostream>
+	<sstream>
+	<iomanip>
+	<ctime>
+	<cstdlib>
+	<fstream>
+	<filesystem>
+
+1744277618 source:d:\study\btl\wallet-manager\walletmanager\transaction.cpp
+	"transaction.h"
+	<iostream>
+	<iomanip>
+
+1744356704 d:\study\btl\wallet-manager\walletmanager\data_manager.h
+	"user.h"
+	<vector>
+
+1744357592 source:d:\study\btl\wallet-manager\walletmanager\data_manager.cpp
+	"data_manager.h"
+	<fstream>
+	<filesystem>
+	<iostream>
+
+1744357592 source:d:\study\btl\walletmanager\data_manager.cpp
+	"data_manager.h"
+	<fstream>
+	<filesystem>
+	<iostream>
+
+1744356704 d:\study\btl\walletmanager\data_manager.h
+	"user.h"
+	<vector>
+
+1744357246 d:\study\btl\walletmanager\user.h
+	<string>
+	<vector>
+	"wallet.h"
+
+1744357893 d:\study\btl\walletmanager\wallet.h
+	<string>
+	<vector>
+	"transaction.h"
+
+1744278122 d:\study\btl\walletmanager\transaction.h
+	<string>
+
+1744277618 source:d:\study\btl\walletmanager\transaction.cpp
+	"transaction.h"
+	<iostream>
+	<iomanip>
+
+1744357264 source:d:\study\btl\walletmanager\user.cpp
+	"user.h"
+	"utils.h"
+	<iostream>
+
+1744357935 d:\study\btl\walletmanager\utils.h
+	"utils.h"
+	"user.h"
+	"wallet.h"
+	"transaction.h"
+	<sstream>
+	<iomanip>
+	<ctime>
+	<cstdlib>
+	<fstream>
+	<filesystem>
+
+1744357946 source:d:\study\btl\walletmanager\utils.cpp
+	"utils.h"
+	<iostream>
+	<sstream>
+	<iomanip>
+	<ctime>
+	<cstdlib>
+	<fstream>
+	<filesystem>
+
+1744366264 source:d:\study\btl\walletmanager\main.cpp
+	"user.h"
+	"wallet.h"
+	"transaction.h"
+	"utils.h"
+	"data_manager.h"
+	<iostream>
+	<string>
+	<vector>
+	<algorithm>
+
+1744358048 source:d:\study\btl\walletmanager\wallet.cpp
+	"wallet.h"
+	"utils.h"
+	"user.h"
+	<iostream>
+	"data_manager.h"
+

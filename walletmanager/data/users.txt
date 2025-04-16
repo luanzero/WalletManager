@@ -1,0 +1,3 @@
+luantv|942b0c273781c4d2|admin|Tran Van Luan|luantv@fpt.com|luantv_wallet|0
+luantv1|e78c2f231c296fc|user|Tran Van Luan 1|luantv1@fpt.com|luantv1_wallet|200
+luantv2|fd0671adc3c6bcec|user|Tran Van Luan 2|luantv2@fpt.com|luantv2_wallet|300
