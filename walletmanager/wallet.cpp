@@ -21,11 +21,21 @@ const std::vector<Transaction>& Wallet::getTransactionHistory() const {
 
 // Thêm giao dịch
 void Wallet::addTransaction(const Transaction& tx) {
+    transactionHistory.push_back(tx);
 }
 
 
 // Hiển thị thông tin ví
 void Wallet::viewWallet() const {
+    cout << "\n--- Vi diem ---\n";
+    cout << "ID vi: " << walletId << endl;
+    cout << "So du: " << balance << " diem\n";
+    cout << "Lich su giao dich:\n";
+    for (const auto& tx : transactionHistory) {
+        cout << tx.getTimestamp() << ": " << tx.getAmount() << " diem tu "
+             << tx.getFromWalletId() << " toi " << tx.getToWalletId()
+             << " [" << tx.getStatus() << "]\n";
+    }
 }
 
 // Chuyển điểm của user đang đăng nhập đến user trong hệ thống
