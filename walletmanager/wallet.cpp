@@ -15,17 +15,15 @@ void Wallet::setBalance(int newBalance) {
     balance = newBalance;
 }
 vector<Transaction>& Wallet::getTransactionHistory() { return transactionHistory; }
-// Lịch sử giao dịch của ví
 const std::vector<Transaction>& Wallet::getTransactionHistory() const {
+    return transactionHistory;
 }
 
-// Thêm giao dịch
 void Wallet::addTransaction(const Transaction& tx) {
     transactionHistory.push_back(tx);
 }
 
 
-// Hiển thị thông tin ví
 void Wallet::viewWallet() const {
     cout << "\n--- Vi diem ---\n";
     cout << "ID vi: " << walletId << endl;
@@ -38,7 +36,6 @@ void Wallet::viewWallet() const {
     }
 }
 
-// Chuyển điểm của user đang đăng nhập đến user trong hệ thống
 void Wallet::transferPoints(vector<User>& users) {
     string toUsername;
     int amount;
