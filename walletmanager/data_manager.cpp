@@ -133,7 +133,18 @@ bool DataManager::loadTransactions(std::vector<User>& users, const std::string& 
 
 // Lưu data của ví tổng xuống file
 bool DataManager::saveGlobalWallet(const Wallet& wallet, const string& filename) {
+    ofstream out(filename);
+    if (!out.is_open()) return false;
 
+    out << wallet.getWalletId() << "|" << wallet.getBalance() << "\n";
+    for (const auto& tx : wallet.getTransactionHistory()) {
+        out << tx.getTimestamp() << "|" << tx.getFromWalletId() << "|"
+            << tx.getToWalletId() << "|" << tx.getAmount() << "|"
+            << tx.getStatus() << "\n";
+    }
+
+    out.close();
+    return true;
 }
 
 // Load dữ liệu ví tổng
