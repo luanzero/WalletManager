@@ -61,41 +61,17 @@ bool DataManager::loadUsers(vector<User>& users, const string& filename) {
 
 // Backup data
 bool DataManager::backupData(const string& sourceFile, const string& backupDir) {
-    if (!filesystem::exists(sourceFile)) {
-        cout << "Khong the mo file de ghi: " << sourceFile << endl;
-        return false;
-    }
-    filesystem::create_directories(backupDir);
-    string backupFile = backupDir + "/backup_" + to_string(time(nullptr)) + ".bak";
-    return filesystem::copy_file(sourceFile, backupFile, filesystem::copy_options::overwrite_existing);
+
 }
 
 // Restore data từ backup
 bool DataManager::restoreBackup(const string& backupFile, const string& targetFile) {
-    if (!filesystem::exists(backupFile)) return false;
-    return filesystem::copy_file(backupFile, targetFile, filesystem::copy_options::overwrite_existing);
+
 }
 
 // Lưu dữ liệu giao dịch xuống file
 bool DataManager::saveTransactions(const std::vector<User>& users, const std::string& filename) {
-    ofstream out(filename);
-    if (!out.is_open()) {
-        cerr << "Khong the ghi file giao dich: " << filename << endl;
-        return false;
-    }
 
-    for (const auto& user : users) {
-        for (const auto& tx : user.getWallet().getTransactionHistory()) {
-            out << tx.getTimestamp() << '|'
-                << tx.getFromWalletId() << '|'
-                << tx.getToWalletId() << '|'
-                << tx.getAmount() << '|'
-                << tx.getStatus() << '\n';
-        }
-    }
-
-    out.close();
-    return true;
 }
 
 // Load dữ liệu giao dịch chuyển điểm
@@ -133,18 +109,7 @@ bool DataManager::loadTransactions(std::vector<User>& users, const std::string& 
 
 // Lưu data của ví tổng xuống file
 bool DataManager::saveGlobalWallet(const Wallet& wallet, const string& filename) {
-    ofstream out(filename);
-    if (!out.is_open()) return false;
 
-    out << wallet.getWalletId() << "|" << wallet.getBalance() << "\n";
-    for (const auto& tx : wallet.getTransactionHistory()) {
-        out << tx.getTimestamp() << "|" << tx.getFromWalletId() << "|"
-            << tx.getToWalletId() << "|" << tx.getAmount() << "|"
-            << tx.getStatus() << "\n";
-    }
-
-    out.close();
-    return true;
 }
 
 // Load dữ liệu ví tổng
