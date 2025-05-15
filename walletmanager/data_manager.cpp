@@ -72,7 +72,8 @@ bool DataManager::backupData(const string& sourceFile, const string& backupDir) 
 
 // Restore data từ backup
 bool DataManager::restoreBackup(const string& backupFile, const string& targetFile) {
-
+  if (!filesystem::exists(backupFile)) return false;
+    return filesystem::copy_file(backupFile, targetFile, filesystem::copy_options::overwrite_existing);
 }
 
 // Lưu dữ liệu giao dịch xuống file
