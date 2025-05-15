@@ -78,7 +78,24 @@ bool DataManager::restoreBackup(const string& backupFile, const string& targetFi
 
 // Lưu dữ liệu giao dịch xuống file
 bool DataManager::saveTransactions(const std::vector<User>& users, const std::string& filename) {
+    ofstream out(filename);
+    if (!out.is_open()) {
+        cerr << "Khong the ghi file giao dich: " << filename << endl;
+        return false;
+    }
 
+    for (const auto& user : users) {
+        for (const auto& tx : user.getWallet().getTransactionHistory()) {
+            out << tx.getTimestamp() << '|'
+                << tx.getFromWalletId() << '|'
+                << tx.getToWalletId() << '|'
+                << tx.getAmount() << '|'
+                << tx.getStatus() << '\n';
+        }
+    }
+
+    out.close();
+    return true;
 }
 
 // Load dữ liệu giao dịch chuyển điểm
