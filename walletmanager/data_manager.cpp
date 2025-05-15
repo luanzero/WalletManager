@@ -61,7 +61,13 @@ bool DataManager::loadUsers(vector<User>& users, const string& filename) {
 
 // Backup data
 bool DataManager::backupData(const string& sourceFile, const string& backupDir) {
-
+    if (!filesystem::exists(sourceFile)) {
+        cout << "Khong the mo file de ghi: " << sourceFile << endl;
+        return false;
+    }
+    filesystem::create_directories(backupDir);
+    string backupFile = backupDir + "/backup_" + to_string(time(nullptr)) + ".bak";
+    return filesystem::copy_file(sourceFile, backupFile, filesystem::copy_options::overwrite_existing);
 }
 
 // Restore data từ backup
