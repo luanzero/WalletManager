@@ -361,42 +361,130 @@ Mỗi bảng con tương ứng với một lớp, liệt kê các thuộc tính 
 
 ### Yêu cầu:
 - Compiler hỗ trợ C++11 hoặc cao hơn (g++, clang++)
-- Thư viện chuẩn C++ (không dùng thư viện ngoài)
 
 ### Tải source code:
 ```bash
-git clone https://github.com/example/point-wallet-system.git
-cd point-wallet-system
+git clone https://github.com/luanzero/WalletManager.git
+cd WalletManager
 ```
 
 ### Dịch chương trình:
 ```bash
-g++ main.cpp user.cpp wallet.cpp transaction.cpp -o wallet-system
+Chạy CodeBlocks: 
+- Chọn File Open chọn tới thư mục dự án chọn walletmanager.cbp 
+- Sau đó nhấn Build > Build hoặc phím tắt F9.
+- Kiểm tra cửa sổ Build log xem có lỗi không.
+Note: Download bản CodeBlocks có cả mingw: https://www.codeblocks.org/downloads/binaries/
 ```
-
-> Có thể thay thế bằng Makefile nếu có.
 
 ## ▶️ Cách chạy chương trình
 
 Sau khi dịch thành công, chạy:
 
 ```bash
-./wallet-system
+Nhấn Build > Run hoặc phím tắt Ctrl + F10 hoặc F10.
 ```
 
-### Thao tác chính:
-1. Đăng ký tài khoản
-2. Đăng nhập
-3. Với người dùng thường:
-   - Cập nhật thông tin cá nhân (yêu cầu xác nhận OTP)
-   - Thay đổi mật khẩu
-   - Xem ví điểm và lịch sử giao dịch
-   - Thực hiện chuyển điểm sang ví khác (OTP bắt buộc)
-4. Với người quản lý:
-   - Xem danh sách tài khoản
-   - Tạo tài khoản hộ người dùng
-   - Cập nhật thông tin hộ (yêu cầu OTP người dùng)
-   - Theo dõi và quản lý ví điểm
+#### HƯỚNG DẪN SỬ DỤNG HỆ THỐNG QUẢN LÝ VÍ ĐIỂM
+
+##### 1. Giới thiệu chung
+
+Phần mềm này là hệ thống quản lý ví điểm cho người dùng, gồm hai loại tài khoản: **Admin (quản lý)** và **User (người dùng thường)**. Hệ thống lưu trữ dữ liệu trong thư mục `data` và có chức năng backup tại thư mục `backup`.
+
+##### 2. Khởi động chương trình
+
+- Khi chạy chương trình, hệ thống sẽ tự động tạo các thư mục `data`, `backup`, và `logs` nếu chưa có.
+- Dữ liệu người dùng, giao dịch và ví tổng sẽ được load tự động từ:
+    - `data/users.txt`
+    - `data/transactions.txt`
+    - `data/global_wallet.txt`
+
+##### 3. Màn hình chính
+Sau khi chạy, bạn sẽ thấy menu chính:
+===== HE THONG VI DIEM =====
+1. Dang ky tai khoan
+2. Dang nhap
+0. Thoat
+Chon:
+###### 3.1. Đăng ký tài khoản mới
+
+- Nhấn `1`, nhập:
+    - **Tên đăng nhập**
+    - **Email**
+    - **Họ tên**
+    - **Mật khẩu** (nhập 2 lần để xác nhận)
+- Nếu tên đăng nhập đã tồn tại hoặc mật khẩu nhập lại không trùng khớp, hệ thống sẽ báo lỗi.
+
+##### 3.2. Đăng nhập
+
+- Nhấn `2`, nhập:
+    - **Tên đăng nhập**
+    - **Mật khẩu**
+- Nếu thông tin chính xác, sẽ chuyển tới menu:
+    - **Admin**: Menu quản lý
+    - **User thường**: Menu người dùng
+
+##### 4. Chức năng người dùng (User)
+Khi đăng nhập bằng tài khoản thường, bạn sẽ thấy menu:
+===== MENU NGUOI DUNG =====
+1. Cap nhat thong tin ca nhan
+2. Thay doi mat khau
+3. Xem vi diem va lich su giao dich
+4. Chuyen diem
+5. Xem thong tin ca nhan
+0. Dang xuat
+Chon:
+- **1. Cập nhật thông tin cá nhân:** Thay đổi thông tin hồ sơ cá nhân.
+- **2. Thay đổi mật khẩu:** Đổi mật khẩu đăng nhập.
+- **3. Xem ví điểm & lịch sử giao dịch:** Xem số dư ví, các giao dịch đã thực hiện.
+- **4. Chuyển điểm:** Chuyển điểm cho tài khoản khác.
+- **5. Xem thông tin cá nhân:** Xem lại thông tin hồ sơ.
+- **0. Đăng xuất:** Thoát tài khoản.
+##### 5. Chức năng quản lý (Admin)
+Nếu đăng nhập với quyền admin, bạn sẽ thấy menu:
+===== MENU QUAN LY =====
+1. Xem danh sach tai khoan
+2. Tao tai khoan ho nguoi dung
+3. Cap nhat thong tin ho
+4. Quan ly vi diem nguoi dung
+5. Xem vi tong
+6. Nap diem vao vi tong (SYSTEM)
+7. Phat diem tu vi tong cho nguoi dung
+8. Sao luu du lieu
+9. Phuc hoi du lieu tu file
+0. Dang xuat
+Chon:
+**1. Xem danh sách tài khoản:** Liệt kê toàn bộ user.
+**2. Tạo tài khoản hộ người dùng:** Admin tạo user mới cho người khác.
+**3. Cập nhật thông tin hộ:** Sửa thông tin của user khác.
+**4. Quản lý ví điểm người dùng:** Quản lý số dư ví của user.
+**5. Xem ví tổng:** Xem số dư ví tổng (GLOBAL).
+**6. Nạp điểm vào ví tổng (SYSTEM):** Nhập số điểm nạp cho ví tổng.
+**7. Phát điểm từ ví tổng cho người dùng:** Phát điểm từ ví tổng cho user bất kỳ.
+**8. Sao lưu dữ liệu:** Backup dữ liệu vào thư mục `backup`.
+**9. Phục hồi dữ liệu từ file:** Khôi phục dữ liệu từ file backup.
+**0. Đăng xuất:** Thoát tài khoản admin.
+
+##### 6. Các thao tác khác
+
+- **Chuyển điểm:** Chỉ chuyển cho user khác đã có tài khoản trong hệ thống.
+- **Backup và Restore:** File backup lưu theo timestamp (dấu thời gian thực hiện).
+
+##### 7. Lưu ý
+
+- Dữ liệu lưu trong thư mục `data` dưới dạng file `.txt`.
+- Mỗi khi nạp, chuyển hoặc phát điểm đều lưu lịch sử giao dịch.
+- Hãy backup thường xuyên để tránh mất mát dữ liệu.
+- Các chức năng chi tiết hơn nằm ở các file khác như `user.h`, `wallet.h`...
+
+##### 8. Gợi ý sử dụng nhanh
+
+1. **Chạy chương trình** → chọn `1` để đăng ký tài khoản admin đầu tiên.
+2. Đăng nhập bằng admin, tạo thêm user nếu muốn.
+3. Admin nạp điểm vào ví tổng, sau đó phát cho user.
+4. User đăng nhập và chuyển điểm cho nhau, xem lịch sử điểm.
+
+
 
 ## 🔐 Tệp tin và thư viện kèm theo
 
@@ -405,6 +493,7 @@ Sau khi dịch thành công, chạy:
 - `wallet.h / wallet.cpp` – quản lý ví
 - `transaction.h / transaction.cpp` – xử lý giao dịch
 - `utils.h / utils.cpp` – tiện ích (hash, sinh OTP,...)
+- `data_manager.h / data_manager.cpp` – Quản lý dữ liệu...
 - `data/` – thư mục chứa tệp dữ liệu người dùng và ví
 - `backup/` – thư mục chứa bản sao lưu dữ liệu
 
