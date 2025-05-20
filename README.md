@@ -11,12 +11,12 @@ Dự án xây dựng một hệ thống phần mềm bằng C++ phục vụ cho 
 
 ## 👨‍💻 Thành viên và phân công công việc
 
-| Họ tên             | Nhiệm vụ chính                                                                 |
-|--------------------|--------------------------------------------------------------------------------|
-| Trần Văn Luân        | Thiết kế cấu trúc dữ liệu, viết chức năng đăng ký, đăng nhập, thay đổi mật khẩu, OTP, xử lý xác thực 2 lớp, bảo mật hệ thống |
-| Nguyễn Thành Phi          | Xây dựng tính năng ví điểm, giao dịch điểm, kiểm tra số dư, xử lý atomic         |
-| Nguyễn Thành Nam            | Phân quyền người dùng, chức năng quản lý, lịch sử giao dịch                                    |
-| Nguyễn Khang        | Lưu trữ dữ liệu vào tệp, quản lý backup, hướng dẫn sử dụng, viết tài liệu      |
+| Họ tên           |Mã Sinh Viên|Email     | Nhiệm vụ chính |
+|--------------------|---------------|---------------|--------------------------------------------------------------------------------|
+| Trần Văn Luân      | K24DTCN070 |tranluan89@gmail.com | Thiết kế cấu trúc dữ liệu, viết chức năng đăng ký, đăng nhập, thay đổi mật khẩu, OTP, xử lý xác thực 2 lớp, bảo mật hệ thống |
+| Nguyễn Thành Phi  | K24DTCN076|  thanhphichv96@gmail.com | Xây dựng tính năng ví điểm, giao dịch điểm, kiểm tra số dư, xử lý atomic         |
+| Nguyễn Thành Nam   | K24DTCN074| anthony307193@gmail.com |Phân quyền người dùng, chức năng quản lý, lịch sử giao dịch                                    |
+| Nguyễn Trọng Khang      |  K24DTCN062 | trongkhang185@gmail.com |Lưu trữ dữ liệu vào tệp, quản lý backup, hướng dẫn sử dụng, viết tài liệu      |
 
 ## 📌 Đặc tả chức năng
 
